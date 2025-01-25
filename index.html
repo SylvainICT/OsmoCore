@@ -1,167 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Osmocore - Home</title>
-  <style>
-    :root {
-      --primary-color: #A682FF;
-      --secondary-color: #1C1C1E;
-      --accent-color: #FFD700;
-      --text-color: #EAEAEA;
-      --bg-gradient: linear-gradient(135deg, #1C1C1E, #3A3A3C);
-      --border-radius: 15px;
-      --shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introductie</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1C1C1E, #3A3A3C); /* Mooi verloop achtergrond */
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        .intro-container {
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s forwards, slideUp 2s ease-in-out;
+        }
 
-    body {
-      font-family: 'Georgia', serif;
-      background: var(--bg-gradient);
-      color: var(--text-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+        .intro-container img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            animation: bounceLogo 2s ease-in-out infinite; /* Nieuwe animatie voor logo */
+        }
 
-    header {
-      width: 100%;
-      background: var(--secondary-color);
-      padding: 20px;
-      display: flex;
-      justify-content: center; /* Center the title */
-      align-items: center;
-      box-shadow: var(--shadow);
-    }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #FFD700;
+            animation: fadeInText 2s ease-out forwards;
+        }
 
-    header img {
-      height: 100px; /* Increased size of logo */
-      margin-right: 20px; /* Optional space between logo and title */
-    }
+        p {
+            font-size: 1.2rem;
+            color: #EAEAEA;
+            margin-top: 20px;
+            animation: fadeInText 2s ease-out forwards;
+            animation-delay: 1s; /* Laat de paragraaf later verschijnen */
+        }
 
-    header h1 {
-      font-size: 3rem;
-      color: var(--accent-color);
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      text-align: center; /* Ensure text is centered */
-    }
+        /* Animaties */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    .hero {
-      text-align: center;
-      margin: 40px 20px;
-      background: var(--secondary-color);
-      padding: 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-    }
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
 
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--accent-color);
-    }
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-    }
+        @keyframes bounceLogo {
+            0% {
+                transform: scale(0) translateY(-50px);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2) translateY(10px);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) translateY(0);
+            }
+        }
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .button {
-      background: var(--primary-color);
-      color: var(--text-color);
-      padding: 12px 30px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-    }
-
-    .button:hover {
-      background: var(--accent-color);
-      color: var(--secondary-color);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
-    }
-
-    footer {
-      margin-top: auto;
-      width: 100%;
-      text-align: center;
-      padding: 15px;
-      background: var(--secondary-color);
-      box-shadow: var(--shadow);
-    }
-
-    footer p {
-      font-size: 0.9rem;
-      color: var(--accent-color);
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-        margin-top: 10px;
-      }
-
-      header img {
-        height: 50px; /* Adjusted size for mobile */
-      }
-
-      .hero h2 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1.1rem;
-      }
-      
-      .buttons {
-        flex-direction: column;
-      }
-    }
-  </style>
+    </style>
 </head>
 <body>
-  <header>
-    <img src="OsmoCore.png" alt="Osmocore Logo"> <!-- Replace with your logo path -->
-    <h1>Osmocore</h1>
-  </header>
 
-  <div class="hero">
-    <h2>Experience Luxurious Web Design</h2>
-    <p>Osmocore combines elegance and sophistication to help you create exceptional layouts. Join us and redefine your web experience.</p>
-    <div class="buttons">
-      <a href="https://discord.gg/GRZuAHs8Qm" target="_blank" class="button">Join Discord</a>
-      <a href="https://wa.me/message/WSM6L626XAJGD1" target="_blank" class="button">Contact via WhatsApp</a> <!-- Replace with your WhatsApp number -->
+    <div class="intro-container">
+        <!-- Voeg hier je foto toe -->
+        <img src="OsmoCore.png" alt="Osmocore Logo" class="logo"> <!-- Voeg hier je logo bestandspad in -->
+
+        <h1>Welcome to Osmocore</h1>
+        <p>You will be redirected to the main page shortly...</p>
     </div>
-  </div>
 
-  <footer>
-    <p>&copy; 2025 Osmocore. Created By OsmoCore.</p>
-  </footer>
+    <script>
+         // Functie die de gebruiker naar de homepagina stuurt na 5 seconden
+         window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "home.html"; // Hier de URL van je homepage plaatsen
+            }, 3000); // 3000 milliseconden = 3 seconden
+        }
+    </script>
+
 </body>
 </html>

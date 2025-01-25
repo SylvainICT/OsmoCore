@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osmocore - Home</title>
+  <style>
+    :root {
+      --primary-color: #A682FF;
+      --secondary-color: #1C1C1E;
+      --accent-color: #FFD700;
+      --text-color: #EAEAEA;
+      --bg-gradient: linear-gradient(135deg, #1C1C1E, #3A3A3C);
+      --border-radius: 15px;
+      --shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg-gradient);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      background: var(--secondary-color);
+      padding: 20px;
+      display: flex;
+      justify-content: center; /* Center the title */
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    header img {
+      height: 100px; /* Increased size of logo */
+      margin-right: 20px; /* Optional space between logo and title */
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent-color);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center; /* Ensure text is centered */
+    }
+
+    .hero {
+      text-align: center;
+      margin: 40px 20px;
+      background: var(--secondary-color);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .button {
+      background: var(--primary-color);
+      color: var(--text-color);
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: var(--accent-color);
+      color: var(--secondary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    }
+
+    footer {
+      margin-top: auto;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      background: var(--secondary-color);
+      box-shadow: var(--shadow);
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: var(--accent-color);
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-top: 10px;
+      }
+
+      header img {
+        height: 50px; /* Adjusted size for mobile */
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="OsmoCore.png" alt="Osmocore Logo"> <!-- Replace with your logo path -->
+    <h1>Osmocore</h1>
+  </header>
+
+  <div class="hero">
+    <h2>Experience Luxurious Web Design</h2>
+    <p>Osmocore combines elegance and sophistication to help you create exceptional layouts. Join us and redefine your web experience.</p>
+    <div class="buttons">
+      <a href="https://discord.gg/GRZuAHs8Qm" target="_blank" class="button">Join Discord</a>
+      <a href="https://wa.me/message/WSM6L626XAJGD1" target="_blank" class="button">Contact via WhatsApp</a> <!-- Replace with your WhatsApp number -->
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Osmocore. Created By OsmoCore.</p>
+  </footer>
+</body>
+</html>
