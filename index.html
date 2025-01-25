@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introductie</title>
+    <title>OsmoCore</title>
+    <link rel="icon" type="image/png" href="OsmoCore.png">
     <style>
         body {
             margin: 0;
@@ -12,7 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #1C1C1E, #3A3A3C); /* Mooi verloop achtergrond */
+            background: linear-gradient(135deg, #1C1C1E, #3A3A3C); 
             font-family: 'Arial', sans-serif;
             overflow: hidden;
         }
@@ -29,7 +30,7 @@
             height: 150px;
             object-fit: cover;
             margin-bottom: 20px;
-            animation: bounceLogo 2s ease-in-out infinite; /* Nieuwe animatie voor logo */
+            animation: bounceLogo 2s ease-in-out infinite; 
         }
 
         h1 {
@@ -44,10 +45,10 @@
             color: #EAEAEA;
             margin-top: 20px;
             animation: fadeInText 2s ease-out forwards;
-            animation-delay: 1s; /* Laat de paragraaf later verschijnen */
+            animation-delay: 1s; 
         }
 
-        /* Animaties */
+    
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -86,19 +87,19 @@
 <body>
 
     <div class="intro-container">
-        <!-- Voeg hier je foto toe -->
-        <img src="OsmoCore.png" alt="Osmocore Logo" class="logo"> <!-- Voeg hier je logo bestandspad in -->
+        
+        <img src="OsmoCore.png" alt="Osmocore Logo" class="logo"> 
 
         <h1>Welcome to Osmocore</h1>
         <p>You will be redirected to the main page shortly...</p>
     </div>
 
     <script>
-         // Functie die de gebruiker naar de homepagina stuurt na 5 seconden
+      
          window.onload = function() {
             setTimeout(function() {
-                window.location.href = "home.html"; // Hier de URL van je homepage plaatsen
-            }, 3000); // 3000 milliseconden = 3 seconden
+                window.location.href = "home.html";
+            }, 3000); 
         }
     </script>
 
