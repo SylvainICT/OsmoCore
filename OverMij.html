@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Osmocore - Home</title>
+  <title>Over Mij - Osmocore</title>
+
+
   <style>
     :root {
       --primary-color: #A682FF;
@@ -43,17 +45,16 @@
     }
 
     header img {
-      height: 100px; 
-      margin-right: 20px; 
+      height: 80px; 
+      margin-right: 15px; 
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: var(--accent-color);
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 3px;
-      text-align: center; 
     }
 
     .hero {
@@ -65,40 +66,24 @@
       box-shadow: var(--shadow);
     }
 
-    .hero h2 {
-      font-size: 2.5rem;
+    .hero img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
       margin-bottom: 20px;
+      border: 3px solid var(--accent-color);
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
       color: var(--accent-color);
     }
 
     .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .button {
-      background: var(--primary-color);
-      color: var(--text-color);
-      padding: 12px 30px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-    }
-
-    .button:hover {
-      background: var(--accent-color);
-      color: var(--secondary-color);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      line-height: 1.6;
     }
 
     footer {
@@ -115,35 +100,8 @@
       color: var(--accent-color);
     }
 
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-        margin-top: 10px;
-      }
-
-      header img {
-        height: 50px;
-      }
-
-      .hero h2 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1.1rem;
-      }
-      
-      .buttons {
-        flex-direction: column;
-      }
-    }
-    .navbar ul {
+  
+.navbar ul {
   display: flex;
   justify-content: center;
   list-style: none;
@@ -174,26 +132,26 @@
 </head>
 <body>
   <header>
-    <img src="OsmoCore.png" alt="Osmocore Logo"> 
-    <h1>Osmocore</h1>
-    <nav class="navbar">
-      <ul>
-        <li><a href="OverMij.html">About</a></li>
-      </ul>
-    </nav>
+  <img src="OsmoCore.png" alt="Osmocore Logo"> 
+  <h1>Osmocore</h1>
+  <nav class="navbar">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+    </ul>
+  </nav>
+</header>
   </header>
 
   <div class="hero">
-    <h2>Experience Luxurious Web Design</h2>
-    <p>Osmocore combines elegance and sophistication to help you create exceptional layouts. Join us and redefine your web experience.</p>
-    <div class="buttons">
-      <a href="https://discord.gg/GRZuAHs8Qm" target="_blank" class="button">Join Discord</a>
-      <a href="https://wa.me/message/WSM6L626XAJGD1" target="_blank" class="button">Contact via WhatsApp</a> 
-    </div>
+    <img src="OsmoCore.png" alt="Profiel Foto">
+    <h2>Hallo, ik ben Devosmo!</h2>
+    <h3>Sylvain Huibers</h3>
+    <p>Ik ben een enthousiaste webontwikkelaar met een passie voor modern design en technologie. Mijn missie is om unieke en stijlvolle websites te creëren die gebruikers inspireren.</p>
+    <p>Buiten mijn werk experimenteer ik met mijn framework, Osmocore, en leer ik graag over nieuwe trends in de tech-wereld. Samenwerken met anderen en mijn creativiteit laten stromen is wat mij drijft!</p>
   </div>
 
   <footer>
-    <p>&copy; 2025 Osmocore. Created By OsmoCore.</p>
+    <p>&copy; 2025 Osmocore. Powered by Osmocore.</p>
   </footer>
 </body>
 </html>
