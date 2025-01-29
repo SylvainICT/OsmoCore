@@ -7,100 +7,240 @@
 
 
   <style>
-    :root {
-      --primary-color: #A682FF;
-      --secondary-color: #1C1C1E;
-      --accent-color: #FFD700;
-      --text-color: #EAEAEA;
-      --bg-gradient: linear-gradient(135deg, #1C1C1E, #3A3A3C);
-      --border-radius: 15px;
-      --shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    }
+  :root {
+  --primary-color: #A682FF;
+  --secondary-color: #1C1C1E;
+  --accent-color: #FFD700;
+  --text-color: #EAEAEA;
+  --bg-gradient: linear-gradient(135deg, #1C1C1E, #3A3A3C);
+  --border-radius: 15px;
+  --shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  --menu-width: 250px; /* Breedt van het zijmenu */
+  --transition-speed: 0.3s; /* Overgangsduur */
+}
+body.light-mode {
+  --primary-color: #A682FF; /* Indigo */
+  --secondary-color: #F0F0F0; /* Lichtgrijs */
+  --accent-color: #FFD700; /* Oranje */
+  --text-color: #333333; /* Donkergrijs */
+  --bg-gradient: linear-gradient(135deg, #ffffffcd, #D3D3D3); /* Lichte achtergrond */
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* Logo rond maken in lichte modus */
+body.light-mode #logo {
+  border-radius: 50%; /* Maakt het logo rond */
+  border: 2px solid var(--accent-color); /* Voeg een accentkleur rondom het logo toe */
+  transition: all 0.3s ease;
+}
 
-    body {
-      font-family: 'Georgia', serif;
-      background: var(--bg-gradient);
-      color: var(--text-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+/* Standaard styling voor de switch-knop */
+.theme-btn {
+  font-size: 1.5rem;
+  background: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative; /* Flexibiliteit voor positionering */
+  z-index: 10;
+}
 
-    header {
-      width: 100%;
-      background: var(--secondary-color);
-      padding: 20px;
-      display: flex;
-      justify-content: center; 
-      align-items: center;
-      box-shadow: var(--shadow);
-    }
+/* Knopverplaatsing instellen */
+.theme-btn.top-right {
+  position: absolute;
+  top: 32px;
+  right: 80px;
+}
 
-    header img {
-      height: 80px; 
-      margin-right: 15px; 
-    }
+.theme-btn:hover {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      color: var(--accent-color);
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
 
-    .hero {
-      text-align: center;
-      margin: 40px 20px;
-      background: var(--secondary-color);
-      padding: 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .hero img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      border: 3px solid var(--accent-color);
-    }
+body {
+  font-family: 'Georgia', serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: var(--accent-color);
-    }
+header {
+  width: 100%;
+  background: var(--secondary-color);
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Zorgt ervoor dat alles horizontaal in het midden staat */
+  align-items: center; /* Zorgt ervoor dat alles verticaal in het midden staat */
+  box-shadow: var(--shadow);
+}
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
+header .logo-container {
+  position: relative;
+}
 
-    footer {
-      margin-top: auto;
-      width: 100%;
-      text-align: center;
-      padding: 15px;
-      background: var(--secondary-color);
-      box-shadow: var(--shadow);
-    }
+header #logo {
+  cursor: pointer;
+  display: block;
+  width: 80px; /* Pas de grootte van het logo aan indien nodig */
+  height: auto;
+  animation: none; /* Standaard geen animatie */
+}
 
-    footer p {
-      font-size: 0.9rem;
-      color: var(--accent-color);
-    }
+header #logo.rotating {
+  animation: spin 2s linear, grow-shrink 1.5s ease-in-out 2s forwards;
+}
 
-  
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1); /* Start normaal */
+  }
+  100% {
+    transform: rotate(360deg) scale(1); /* Volledig gedraaid, maar grootte blijft normaal */
+  }
+}
+
+@keyframes grow-shrink {
+  0% {
+    transform: scale(1); /* Start normaal */
+  }
+  50% {
+    transform: scale(1.5); /* Groter halverwege */
+  }
+  100% {
+    transform: scale(1); /* Terug naar normaal */
+  }
+}
+
+header h1 {
+  font-size: 3rem;
+  color: var(--accent-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-left: 20px; /* Ruimte tussen logo en h1 */
+}
+
+header {
+  display: flex;
+  justify-content: center; /* Zorgt ervoor dat zowel logo als h1 in het midden staan */
+  align-items: center;
+  gap: 10px;  /* Ruimte tussen logo en h1 */
+}
+.hero img {
+  width: 120px; /* Stel de breedte van het logo in */
+  height: 120px; /* Stel de hoogte van het logo in */
+  border-radius: 50%; /* Maak het logo rond */
+  margin-bottom: 20px; /* Ruimte onder het logo */
+  border: 3px solid var(--accent-color); /* Voeg een rand toe rondom het logo */
+  transition: transform 0.3s ease; /* Voeg een animatie toe voor het in- en uitzoomen van het logo */
+}
+
+.hero img:hover {
+  transform: scale(1.1); /* Zoom in wanneer de gebruiker met de muis over het logo gaat */
+}
+.hero {
+  text-align: center;
+  margin: 40px 2px;
+  background: var(--secondary-color);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button {
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background: var(--secondary-color);
+  box-shadow: var(--shadow);
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    margin-top: 10px;
+  }
+
+  header img {
+    height: 50px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
+
+
 .navbar ul {
   display: flex;
   justify-content: center;
@@ -128,24 +268,235 @@
   color: var(--secondary-color);
   transform: translateY(-2px);
 }
+.social-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-btn img {
+  width: 30px;  /* Pas de grootte van het pictogram hier aan */
+  height: 30px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.social-btn:hover img {
+  transform: scale(1.1);
+}
+
+.social-btn:active img {
+  opacity: 0.8;
+}
+
+.menu-btn {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  background: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: absolute; /* Absolute positionering */
+  top: 6.9%; /* Plaats in het verticale midden van de pagina */
+  right: 20px; /* Plaats de knop helemaal rechts */
+  transform: translateY(-50%); /* Corrigeer de verticale positionering */
+}
+
+.menu-btn:hover {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+nav {
+  position: absolute;
+  top: 30%; /* Zet het menu ook verticaal gecentreerd */
+  right: 0px; /* Laat het menu vanaf rechts verschijnen */
+  transform: translateY(-50%); /* Corrigeer de verticale centrering */
+  background: var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 2px;
+  display: none; /* Verborgen standaard */
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+nav.active {
+  display: flex; /* Toon menu wanneer actief */
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+header .menu-btn {
+  background: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background var(--transition-speed);
+}
+
+header .menu-btn:hover {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+/* Het menu begint buiten beeld */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Start buiten het scherm */
+  width: 250px; /* Breedte van het menu */
+  height: 100%; /* Volledige hoogte */
+  background: var(--secondary-color);
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: left 0.3s ease; /* Animatie voor openen/sluiten */
+  z-index: 1000; /* Zorg dat het menu bovenop ligt */
+}
+
+.side-menu.active {
+  left: 0; /* Schuift naar binnen wanneer actief */
+}
+
+.side-menu .close-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 20px 0;
+}
+
+.side-menu ul li {
+  margin: 15px 0;
+}
+
+.side-menu ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
   </style>
 </head>
 <body>
-  <header>
-  <img src="OsmoCore.png" alt="Osmocore Logo"> 
-  <h1>Osmocore</h1>
-  <nav class="navbar">
-    <ul>
-      <li><a href="home.html">Home</a></li>
-    </ul>
-  </nav>
-</header>
+    <header>
+        <div class="logo-container">
+          <img src="Afbeeldingen/OsmoCore/OsmoCore.png" alt="Logo" id="logo">
+        </div>
+        <h1>OsmoCore</h1>
+        <button class="menu-btn">☰</button>
+        <!-- Dark-mode toggle knop met 'top-right' klasse -->
+        <button id="themeToggle" class="theme-btn top-right">🌙</button>
+      </header>
+      <div class="side-menu" id="sideMenu">
+        <button class="close-btn" id="closeMenu">&times;</button>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="Framework.html">Services</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <script>
+    
+      
+        logo.addEventListener('click', () => {
+          // Voeg de "rotating" klasse toe
+          logo.classList.add('rotating');
+      
+          // Verwijder de klasse na de animatie zodat je opnieuw kunt klikken
+          setTimeout(() => {
+            logo.classList.remove('rotating');
+          }, 3500); // Duur van de animatie (3.5 seconden)
+        });
+         /// Selecteer elementen
+      const menuBtn = document.querySelector('.menu-btn');
+      const sideMenu = document.getElementById('sideMenu');
+      const closeMenu = document.getElementById('closeMenu');
+    
+      // Open het menu
+      menuBtn.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+      });
+    
+      // Sluit het menu
+      closeMenu.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+      });
+      // Selecteer de toggle-knop en de body
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+// Controleer de opgeslagen modusvoorkeur in localStorage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  body.classList.add(savedTheme);
+  themeToggle.textContent = savedTheme === 'light-mode' ? '🌙' : '☀️';
+}
+
+// Wissel tussen licht en donker
+themeToggle.addEventListener('click', () => {
+  if (body.classList.contains('light-mode')) {
+    body.classList.remove('light-mode');
+    localStorage.setItem('theme', ''); // Opslaan dat er geen specifieke modus is
+    themeToggle.textContent = '🌙'; // Zet tekst van knop naar maan
+  } else {
+    body.classList.add('light-mode');
+    localStorage.setItem('theme', 'light-mode'); // Opslaan lichte modus
+    themeToggle.textContent = '☀️'; // Zet tekst van knop naar zon
+  }
+});
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+  });
+});
+document.querySelectorAll('img').forEach(img => {
+  img.setAttribute('draggable', 'false');
+});
+      </script>
+      </body>
   </header>
 
   <div class="hero">
-    <img src="OsmoCore.png" alt="Profiel Foto">
+    <img src="Afbeeldingen/OsmoCore/OsmoCore.jpg" alt="Profiel Foto">
     <h2>Hallo, ik ben Devosmo!</h2>
-    <h3>Sylvain Huibers</h3>
     <p>Ik ben een enthousiaste webontwikkelaar met een passie voor modern design en technologie. Mijn missie is om unieke en stijlvolle websites te creëren die gebruikers inspireren.</p>
     <p>Buiten mijn werk experimenteer ik met mijn framework, Osmocore, en leer ik graag over nieuwe trends in de tech-wereld. Samenwerken met anderen en mijn creativiteit laten stromen is wat mij drijft!</p>
   </div>

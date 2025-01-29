@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Osmocore - Home</title>
+  <title>Osmocore - Contact</title>
   <style>
     :root {
     --primary-color: #A682FF;
@@ -408,30 +408,153 @@
     font-size: 1.2rem;
     font-weight: bold;
   }
-    </style>
-  </head>
-  <body>
-      <header>
-          <div class="logo-container">
-            <img src="Afbeeldingen/OsmoCore/OsmoCore.png" alt="Logo" id="logo">
-          </div>
-          <h1>OsmoCore</h1>
-          <button class="menu-btn">☰</button>
-          <!-- Dark-mode toggle knop met 'top-right' klasse -->
-          <button id="themeToggle" class="theme-btn top-right">🌙</button>
-        </header>
-        <div class="side-menu" id="sideMenu">
-          <button class="close-btn" id="closeMenu">&times;</button>
-          <ul>
-            <li><a href="OverMij.html">About me</a></li>
-          <li><a href="Framework.html">Services</a></li>
-          <li><a href="Contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <script>
-      
-        
-          logo.addEventListener('click', () => {
+  
+
+  .contact-widget {
+  display: block; /* Zorg ervoor dat de widget altijd zichtbaar is */
+  position: fixed; /* Vastzetten aan de pagina */
+  right: 10px; /* 10px van de rechterkant van het scherm */
+  top: 50%; /* Positie in het midden van het scherm */
+  transform: translateY(-50%); /* Zorg ervoor dat de widget precies in het midden staat */
+  background-color: #1C1C1E;
+  color: #333333;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  width: 240px;
+  max-width: 90%;
+  transition: all 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+/* Schaduw en beweging voor de widget */
+.contact-widget:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact-item structuur */
+.contact-item {
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.contact-item strong {
+  font-weight: bold;
+  color: #4CAF50;
+  font-size: 16px;
+}
+
+.contact-item a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #00aaff;
+  text-decoration: underline;
+}
+
+/* Subtiele overgangsanimaties voor contact info */
+.contact-item p {
+  margin: 5px 0;
+  color: #666;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+.contact-item:nth-child(1) p {
+  animation-delay: 0.1s;
+}
+.contact-item:nth-child(2) p {
+  animation-delay: 0.2s;
+}
+.contact-item:nth-child(3) p {
+  animation-delay: 0.3s;
+}
+.contact-item:nth-child(4) p {
+  animation-delay: 0.4s;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+  
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="Afbeeldingen/OsmoCore/OsmoCore.png" alt="Logo" id="logo">
+    </div>
+    <h1>OsmoCore</h1>
+    <button class="menu-btn">☰</button>
+    <button id="themeToggle" class="theme-btn top-right">🌙</button>
+  </header>
+  <div class="side-menu" id="sideMenu">
+    <button class="close-btn" id="closeMenu">&times;</button>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="OverMij.html">About</a></li>
+      <li><a href="Framework.html">Services</a></li>
+    </ul>
+  </div>
+  
+  <div class="hero">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Reach out to us via the form below or through our social media channels.</p>
+    <form action="#" method="post" style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+      <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; border-radius: var(--border-radius); width: 80%; max-width: 500px;">
+      <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; border-radius: var(--border-radius); width: 80%; max-width: 500px;">
+      <textarea name="message" placeholder="Your Message" rows="5" required style="padding: 10px; border-radius: var(--border-radius); width: 80%; max-width: 500px;"></textarea>
+      <button type="submit" class="button">Send Message</button>
+    </form>
+  </div>
+    <div id="contactWidget" class="contact-widget">
+      <div class="contact-item">
+        <strong>Email:</strong>
+        <a href="mailto:your-email@example.com">your-email@example.com</a>
+      </div>
+      <div class="contact-item">
+        <strong>Telefoon:</strong>
+        <a href="tel:+123456789">+123 456 789</a>
+      </div>
+      <div class="contact-item">
+        <strong>Adres:</strong>
+        <p>1234 Straatnaam, Stad, Land</p>
+      </div>
+      <div class="contact-item">
+        <strong>Social Media:</strong>
+        <a href="https://www.discord.com/yourprofile" target="_blank">Discord</a>
+      </div>
+    </div>
+  <div class="social-buttons">
+    <a href="https://discordapp.com/users/785480190984716310" target="_blank" class="social-btn discord">
+      <img src="Afbeeldingen/Social/Discord.jpg" alt="Discord">
+    </a>
+    <a href="https://www.instagram.com/devosmo_" target="_blank" class="social-btn twitter">
+      <img src="Afbeeldingen/Social/Instagram.jpg" alt="Twitter">
+    </a>
+    <a href="https://github.com/OsmoCore" target="_blank" class="social-btn facebook">
+      <img src="Afbeeldingen/Social/github.png" alt="GitHub">
+    </a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Osmocore. Created By OsmoCore.</p>
+  </footer>
+  
+  <script>
+    
+    logo.addEventListener('click', () => {
             // Voeg de "rotating" klasse toe
             logo.classList.add('rotating');
         
@@ -488,39 +611,13 @@
   document.querySelectorAll('img').forEach(img => {
     img.setAttribute('draggable', 'false');
   });
-        </script>
-</head>
-<body>
-  <body>
+  function toggleContactWidget() {
+  const contactWidget = document.getElementById('contactWidget');
+  contactWidget.classList.toggle('open'); // Toggle visibility
+}
 
-
-  <div class="hero">
-    <h2>Experience Luxurious Web Design</h2>
-    <p>Osmocore combines elegance and sophistication to help you create exceptional layouts. Join us and redefine your web experience.</p>
-    <div class="buttons">
-      <a href="https://discord.gg/GRZuAHs8Qm" target="_blank" class="button">Join Discord</a>
-      <a href="https://wa.me/message/WSM6L626XAJGD1" target="_blank" class="button">Contact via WhatsApp</a> 
-    </div>
-  </div>
-</div>
-<body>
-  <div class="social-buttons">
-    <a href="https://discordapp.com/users/785480190984716310" target="_blank" class="social-btn discord">
-      <img src="Afbeeldingen/Social/Discord.jpg" alt="Discord">
-    </a>
-    <a href="https://www.instagram.com/devosmo_" target="_blank" class="social-btn twitter">
-      <img src="Afbeeldingen/Social/Instagram.jpg" alt="Twitter">
-    </a>
-    <a href="https://github.com/OsmoCore" target="_blank" class="social-btn facebook">
-      <img src="Afbeeldingen/Social/github.png" alt="github">
-    </a>
-  </div>
-</body>
-
-
-  <footer>
-    <p>&copy; 2025 Osmocore. Created By OsmoCore.</p>
-  </footer>
-  
+// Optionally, you can attach this function to an element (like a button) to show the widget.
+document.getElementById('toggleContactBtn').addEventListener('click', toggleContactWidget);
+  </script>
 </body>
 </html>
