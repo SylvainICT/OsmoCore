@@ -56,14 +56,20 @@
     position: relative; /* Flexibiliteit voor positionering */
     z-index: 10;
   }
-  
-  /* Knopverplaatsing instellen */
-  .theme-btn.top-right {
+ /* Media query voor kleinere schermen (bijvoorbeeld telefoons) */
+@media (max-width: 768px) {
     position: absolute;
     top: 65px;
     right: 35px;
   }
-  
+  * Media query voor grotere schermen (bijvoorbeeld desktops) */
+@media (min-width: 1200px) {
+  .theme-button {
+    top: 40px;        /* Meer ruimte bovenaan */
+    right: 80px;      /* Meer ruimte rechts */
+    
+  }
+}
   .theme-btn:hover {
     background: var(--accent-color);
     color: var(--secondary-color);
