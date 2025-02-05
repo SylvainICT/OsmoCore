@@ -82,9 +82,14 @@
         align-items: flex-start; /* Zorg ervoor dat ze links uitgelijnd zijn */
     }
 
-    .theme-button {
-        margin-top: 10px; /* Voeg ruimte toe tussen de nav-knoppen en de button */
-        align-self: stretch; /* Laat de button de volledige breedte nemen */
+    /* Media query voor kleinere schermen (bijvoorbeeld telefoons) */
+@media (max-width: 768px) {
+  .theme-button {
+    top: 5px;         /* Iets minder ruimte bovenaan op kleinere schermen */
+    right: 5px;       /* Iets minder ruimte rechts */
+    padding: 8px 12px; 
+  }
+}
     }
 }
 
