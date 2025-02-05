@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="Afbeeldingen/OsmoCore/OsmoCore.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services</title>
@@ -466,7 +467,7 @@ body.light-mode #logo {
   color: var(--text-color);
   border: none;
   border-radius: var(--border-radius);
-  padding: 10px 20px;
+  padding: 10px 15px;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative; /* Flexibiliteit voor positionering */
@@ -476,13 +477,24 @@ body.light-mode #logo {
 /* Knopverplaatsing instellen */
 .theme-btn.top-right {
   position: absolute;
-  top: 32px;
-  right: 90px;
+  top: 36.5px;
+  right: 80px;
 }
 
 .theme-btn:hover {
   background: var(--accent-color);
   color: var(--secondary-color);
+}
+@media (max-width: 768px) {
+    .menu-btn {
+        flex-direction: column; /* Zet de nav-knoppen onder elkaar */
+        align-items: flex-start; /* Zorg ervoor dat ze links uitgelijnd zijn */
+    }
+
+    .theme-button {
+        margin-top: 10px; /* Voeg ruimte toe tussen de nav-knoppen en de button */
+        align-self: stretch; /* Laat de button de volledige breedte nemen */
+    }
 }
 
       </style>
@@ -548,7 +560,107 @@ body.light-mode #logo {
         </div>
     </div>
 </section>
-
+<section class="made-by">
+  <h2>Made by Devosmo</h2>
+  <div class="projects">
+    <div class="project-card">
+      <img src="Afbeeldingen/OsmoCore/OsmoCore.png" alt="Project 1">
+      <h3>Vakantiehuisje Verhuur</h3>
+      <p>Een avontuurlijke website voor het verhuren van een gezellig vakantiehuisje, inclusief Google Maps integratie.</p>
+      <a href="https://voorbeeldwebsite1.com" class="button" target="_blank">Bekijk Website</a>
+    </div>
+    <div class="project-card">
+      <img src="Afbeeldingen/OsmoCore/OsmoCore.png" alt="Project 2">
+      <h3>personal Website</h3>
+      <p>my personal website made with my own frame work.</p>
+      <a href="https://sylvainhuibers.com" class="button" target="_blank">Bekijk Website</a>
+    </div>
+    <style>.made-by {
+      background: var(--secondary-color);
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      margin: 40px 20px;
+    }
+    
+    .made-by h2 {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .projects {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .project-card {
+      background: var(--primary-color);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .project-card img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      margin-bottom: 15px;
+    }
+    
+    .project-card h3 {
+      color: var(--accent-color);
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+    
+    .project-card p {
+      color: var(--text-color);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    
+    .project-card .button {
+      display: inline-block;
+      background: var(--accent-color);
+      color: var(--secondary-color);
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: var(--border-radius);
+      transition: background 0.3s, transform 0.3s;
+    }
+    
+    .project-card .button:hover {
+      background: var(--primary-color);
+      color: var(--text-color);
+      transform: translateY(-3px);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    }
+    
+    @media (max-width: 768px) {
+      .projects {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .project-card {
+        width: 90%;
+      }
+    }</style>
+    <!-- Voeg hier meer projecten toe -->
+  </div>
+</section>
   <footer>
     <p>&copy;Osmocore, Powerd By osmocore</p>
   </footer>

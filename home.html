@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="Afbeeldingen/OsmoCore/OsmoCore.png" type="image/png">
   <title>Osmocore - Home</title>
   <style>
     :root {
@@ -39,7 +40,7 @@
     color: var(--text-color);
     border: none;
     border-radius: var(--border-radius);
-    padding: 10px 20px;
+    padding: 10px 15px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative; /* Flexibiliteit voor positionering */
@@ -49,7 +50,7 @@
   /* Knopverplaatsing instellen */
   .theme-btn.top-right {
     position: absolute;
-    top: 32px;
+    top: 36.5px;
     right: 80px;
   }
   
@@ -65,6 +66,18 @@
     box-sizing: border-box;
   }
   
+  @media (max-width: 768px) {
+    .menu-btn {
+        flex-direction: column; /* Zet de nav-knoppen onder elkaar */
+        align-items: flex-start; /* Zorg ervoor dat ze links uitgelijnd zijn */
+    }
+
+    .theme-button {
+        margin-top: 10px; /* Voeg ruimte toe tussen de nav-knoppen en de button */
+        align-self: stretch; /* Laat de button de volledige breedte nemen */
+    }
+}
+
   body {
     font-family: 'Georgia', serif;
     background: var(--bg-gradient);
@@ -519,7 +532,7 @@
 
 
   <footer>
-    <p>&copy; 2025 Osmocore. Created By OsmoCore.</p>
+    <p>&copy; 2025 Osmocore. Powerd By OsmoCore.</p>
   </footer>
   
 </body>

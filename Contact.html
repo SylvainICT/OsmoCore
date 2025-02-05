@@ -39,7 +39,7 @@
     color: var(--text-color);
     border: none;
     border-radius: var(--border-radius);
-    padding: 10px 20px;
+    padding: 10px 15px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative; /* Flexibiliteit voor positionering */
@@ -49,7 +49,7 @@
   /* Knopverplaatsing instellen */
   .theme-btn.top-right {
     position: absolute;
-    top: 32px;
+    top: 36.5px;
     right: 80px;
   }
   
@@ -58,7 +58,17 @@
     color: var(--secondary-color);
   }
   
-  
+  @media (max-width: 768px) {
+    .menu-btn {
+        flex-direction: column; /* Zet de nav-knoppen onder elkaar */
+        align-items: flex-start; /* Zorg ervoor dat ze links uitgelijnd zijn */
+    }
+
+    .theme-btn {
+        margin-top: 10px; /* Voeg ruimte toe tussen de nav-knoppen en de button */
+        align-self: stretch; /* Laat de button de volledige breedte nemen */
+    }
+}
   * {
     margin: 0;
     padding: 0;
@@ -511,30 +521,14 @@
   <div class="hero">
     <h2>Contact Us</h2>
     <p>We’d love to hear from you! Reach out to us via the form below or through our social media channels.</p>
-    <form action="#" method="post" style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+    <form action="https://formspree.io/f/manqbwry" method="post" style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
       <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; border-radius: var(--border-radius); width: 80%; max-width: 500px;">
       <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; border-radius: var(--border-radius); width: 80%; max-width: 500px;">
       <textarea name="message" placeholder="Your Message" rows="5" required style="padding: 10px; border-radius: var(--border-radius); width: 80%; max-width: 500px;"></textarea>
       <button type="submit" class="button">Send Message</button>
     </form>
   </div>
-    <div id="contactWidget" class="contact-widget">
-      <div class="contact-item">
-        <strong>Email:</strong>
-        <a href="mailto:Info@osmocore.nl">Info@osmocore.nl</a>
-      </div>
-      <div class="contact-item">
-        <strong>Telefoon:</strong>
-        <a href="tel:+31 6 43761556">+31 6 43761556</a>
-      </div>
-      <div class="contact-item">
-        <strong>name:</strong>
-        <p>sylvainhuibers</p>
-      </div>
-      <div class="contact-item">
-        <strong>Social Media:</strong>
-      </div>
-    </div>
+    
   <div class="social-buttons">
     <a href="https://discordapp.com/users/785480190984716310" target="_blank" class="social-btn discord">
       <img src="Afbeeldingen/Social/Discord.jpg" alt="Discord">
@@ -548,7 +542,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 Osmocore. Created By OsmoCore.</p>
+    <p>&copy; 2025 Osmocore. Powerd By OsmoCore.</p>
   </footer>
   
   <script>
